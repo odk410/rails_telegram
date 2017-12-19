@@ -1,5 +1,5 @@
-#Rails_telegram
-##기능
+# Rails_telegram
+## 기능
 - 웹에서 메세지 입력시 Telegram Bot으로 출력하기
 - 로그인, 로그아웃, 회원가입 가능
 - 루트 페이지에 모든 메세지 기록 출력하기
@@ -132,7 +132,7 @@
     helper_method :[함수명]
   ```
 
-##models - message.rb, user.rb
+## models - message.rb, user.rb
 - 두 개의 관계를 정의할 수 있다.
 - User와 Message의 관계는 1:N이라고 볼 수 있다.
 - 따라서 각 파일에 다음과 같은 설정을 해주어야 한다.
@@ -148,20 +148,20 @@
   end
 ```
 
-##Views - layout
+## Views - layout
 - 이 곳에 무언가를 만든다면 모든 View에서 다 보인다.
 ```ruby
   @전역함수와 관계를 설정했기에 가능한 코드이다.
   current_user.email
 ```
 
-##몇 분전에 보낸 것인지 표시하는 방법
+## 몇 분전에 보낸 것인지 표시하는 방법
 ```ruby
   #message가 몇 분 전에 만들어졌는지 알려준다. 분으로
   time_ago_in_words(message.created_at)
 ```
 
-##Config - routes.rb
+## Config - routes.rb
 - root를 사용해주면 내가 원하는 곳을 루트로 지정할 수 있다.
 - get에서 [경로]와 [컨트롤러#기능]이 같다면 [컨트롤러#기능]을 생략할 수 있다.
 ```ruby
@@ -173,7 +173,7 @@
   get 'messages/send_msg'
 ```
 
-##Config - secrets.yml
+## Config - secrets.yml
 - git에 올릴 때 숨기고 싶은 내용을 이곳에서 설정한다.
 ```ruby
   development:
@@ -182,12 +182,12 @@
 ```
 - 여기서 설정한 [변수 명]으로 원래코드에서도 변경해주어야한다.
 
-##DB
+## DB
 - DB설정을 하고 난 뒤 rake db:migrate 하기
 - 수정할 것이 있다면 지금은 rake db:rollback을 사용하고 다시 migrate하기
 
 
-##.gitignore
+## .gitignore
 - scretes.yml에서 숨길 값을 설정했다면
 - 여기서는 git에 올릴 때 무시할 파일을 설정하는 곳이다.
 ```ruby
@@ -199,6 +199,6 @@
   /config/secrets.yml
 ```
 
-##Gemfile
+## Gemfile
 - 사용할 Gem을 적는 곳
 - Git bash에서 bundle install을 통해 여기서 설정한 모든 Gem을 설치할 수 있다.
